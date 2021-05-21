@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutismAssesss</title>
+
+    <!-- 导入bootstrap的Css 样式-->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- 导入公共的Css 样式-->
+<link href="css/reset.css" rel="stylesheet">
+<link href="css/index.css" rel="stylesheet">
+
+<link rel="stylesheet" href="css/swiper.min.css">
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<link rel="stylesheet" href="css/style.css">
+<!-- 导入jquery -->
+<!--
+<script src="js/jquery-3.2.1.min.js"></script>-->
+<!-- 导入bootstrap的js -->
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js" ></script>
+</head>
+<body>
+    <div class="p-top">
+        <p><img alt="孤独症评估" src="images/starfuture.png" class="logo">AutisumAssess</p>
+    </div>
+
+    <div class="p-container">
+        <section class="sec1">
+            <div class="main">
+                <!-- 基于swiper的新闻滚动组合1 
+                <div class="title">基于swiper的新闻滚动组合1</div>-->
+                <div class="w-newsList w-newsList1 clearfix" id="newsList1">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="news-item"><a href="#" class="clearfix">
+                                <div class="news-imgbox img-count"><div class="aspectRatio"></div><div class="img-count-in"><img src="images/banner1.jpg"></div></div>
+                                <div class="news-text">
+                                    <div class="date">
+                                        <div class="year">AutisumAssess</div>                                        
+                                    </div>
+                                    <div class="news-h">量表评估</div>
+                                    <div class="news-sum">使用ABC表与CARS表对儿童进行孤独症倾向评估，进行基本的孤独症程度判断并提出专业建议</div>
+                                    <div class="more"></div>
+                                </div>
+                            </a></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="news-item"><a href="#" class="clearfix">
+                                <div class="news-imgbox img-count"><div class="aspectRatio"></div><div class="img-count-in"><img src="images/banner2.jpg"></div></div>
+                                <div class="news-text">
+                                    <div class="date">
+                                        <div class="year">AutisumAssess</div>                                        
+                                    </div>
+                                    <div class="news-h">游戏评估</div>
+                                    <div class="news-sum">使用游戏直接对儿童的各项能力进行评估，根据游戏得分数值对儿童能力进行判断并提出指导性建议</div>
+                                    <div class="more"></div>
+                                </div>
+                            </a></div>
+                        </div>
+                        
+                    </div>
+                    <div class="adSN_page"></div>
+                    <div class="swiper-num">
+                        <span class="active"></span>/
+                        <span class="total"></span>
+                    </div>
+                </div>      
+                </div>
+                </section>        
+    </div>
+
+    <div class="p-content">
+        <div class="content-title">
+            <p>产品介绍</p>
+        </div>
+        <div class="content-box row" >
+            <div class="content-info  ">
+                <div class="detail-img">
+                    <img src="images/icon_animation2.png"/>
+                </div>
+                <div class="detail-p">
+                    <p>为儿童提供专业量表的在线测评功能，使家长能够随时随地利用该功能了解孩子的当前状况并获得指导性建议，希望能够促使潜在孤独症儿童早日就医</p>
+                </div>
+            </div>
+
+            <div class="content-info">
+                <div class="detail-img">
+                    <img src="images/icon_animation3.png"/>
+                </div>
+                <div class="detail-p">
+                    <p>利用一系列小游戏对儿童能力进行直接评估，通过游戏结果生成儿童能力评估分析报告，为家长提供指导性建议，引导家长带领孤独症儿童早日就医</p>
+                </div>
+            </div>
+
+            <div class="content-info">
+                <div class="detail-img">
+                    <img src="images/icon_animation4.png"/>
+                </div>
+                <div class="detail-p">
+                    <p>本软件运行在Android系统的智能手机或虚拟机上，将APK文件进行安装后，点击本软件应用图标进入软件启动界面，自动进入主页面，然后即可进行需要的软件操作。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="p-logo">
+        <div class="logo-bottom row">
+            <!-- <div class="div-btn">
+                <button class="btn  btn-info btn-lg ">联系我们</button>
+            </div> -->
+
+            <div class="div-btn">
+                <button class="btn btn-info btn-lg " onclick="location='http://122.204.161.121:8080/starlesson/app/ccnu.nercel.special_edu_portrait.apk'">下载软件</button>
+                <img src="images/qrcode.png" class="qrcode"/>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(function(){
+            /*图片位置计算*/
+            var imgCount = function () {
+                $('.img-count').each(function (index, element) {
+                    var imgH = $(this).height();
+                    var imgW = $(this).width();
+                    var $thisimg = $(this).find('img');
+                    var img = new Image();
+                    img.onload = function () {
+                        if ($thisimg.data("img") === false) {
+                            return '';
+                        }
+                        var imgWidth = img.width;
+                        var imgHeight = img.height;
+                        if ((imgWidth / imgHeight) < (imgW / imgH)) {
+                            $thisimg.css({'height': (imgW / imgH) * ((imgHeight * 1.00) / imgWidth) * imgH, 'max-height': (imgW / imgH) * ((imgHeight * 1.00) / imgWidth) * imgH, 'top': -((imgW / imgH) * ((imgHeight * 1.00) / imgWidth) - 1) / 2 * imgH})
+                        } else {
+                            $thisimg.css({'width': (imgH / imgW) * ((imgWidth * 1.00) / imgHeight) * imgW, 'max-width': (imgH / imgW) * ((imgWidth * 1.00) / imgHeight) * imgW, 'left': -((imgH / imgW) * ((imgWidth * 1.00) / imgHeight) - 1) / 2 * imgW})     
+                        }
+                    }
+                    img.src = $thisimg.attr("src");
+                });
+            }
+            
+            //滚动设置
+            var swiper = new Swiper('#newsList1', {
+                effect : 'fade',
+                fadeEffect: {
+                    crossFade: true,
+                },
+                direction : 'horizontal',
+                loop: true,
+                autoplay : {
+                    delay:5000,//滚动速度
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.adSN_page',
+                    clickable :true,
+                },
+                on:{
+                    init:function(){
+                        var total=this.slides.length-2;
+                        $('.swiper-num .total').text('0'+total);
+                        this.emit('transitionEnd');
+                    },
+                    transitionEnd:function(){
+                        var index=this.realIndex+1;
+                        $(".swiper-num .active").text("0"+index);
+                    }
+                }
+            });
+
+            imgCount();
+            $(window).resize(function () {
+                imgCount();
+            });
+        });
+        </script> 
+</body>
+</html>
